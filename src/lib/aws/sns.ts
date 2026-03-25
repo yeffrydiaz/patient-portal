@@ -26,10 +26,10 @@ export async function sendSMSReminder(phoneNumber: string, message: string): Pro
 export async function sendAppointmentReminder(
   phoneNumber: string,
   patientName: string,
-  doctorName: string,
+  providerName: string,
   appointmentDateTime: string
 ): Promise<void> {
-  const message = `Hello ${patientName}, this is a reminder for your appointment with Dr. ${doctorName} on ${appointmentDateTime}. Reply CANCEL to cancel. Reply CONFIRM to confirm.`;
+  const message = `Hello ${patientName}, this is a reminder for your appointment with ${providerName} on ${appointmentDateTime}. Reply CANCEL to cancel. Reply CONFIRM to confirm.`;
   
   await sendSMSReminder(phoneNumber, message);
 }
